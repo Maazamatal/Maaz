@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>campusfinder</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<h1>
+  C.U.Shah University
+</h1>
+<h6>
+  Vardhman Bharti Trust | Accredited State Private University
+</h6>
+<body>
+  
+
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Campus Finder</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="office.html">Office</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="class.html">Class</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="canteen.html">Canteen</a>
+              </li>
+              
+            </ul>
+            <form class="d-flex" role="search" style="max-width: 250px;">
+              <input id="globalSearchInput" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button id="globalSearchBtn" class="btn btn-outline-success" type="button">Search</button>
+          </form>
+          </div>
+        </div>
+      </nav>
+      <div class="card mb-3" style="max-width: 1000px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="images/pic2.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <p class="card-text">About Us</p>
+              <h5 class="card-title">The University</h5>
+              <p class="card-text">C. U. Shah University, established on 22nd April, 2013, managed by Wardhman Bharti Trust (Established in 1968). This State Private University recognized and approved by all regulatory and statutory bodies.</p>
+              <p class="card-text">Government of Gujarat Legislative Recognition (Establishment Act)
+                University Grants Commission (UGC) Recognition Letter
+                University Grants Commission (UGC) Visit Letter
+                Official UGC University Listing & Recognition Verification
+                </p>
+              <p class="card-text"><small class="text-body-secondary">Last updated August 4,2026</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <script>
+        document.getElementById('globalSearchBtn').addEventListener('click', function() {
+            let query = document.getElementById('globalSearchInput').value.toLowerCase().trim();
+        
+            if (query === "") {
+                alert("Please type something to search!");
+                return;
+            }
+        
+            
+            if (query.includes('office') || query.includes('cabin') || query.includes('admin')) {
+                window.location.href = "office.html";
+            } 
+            else if (query.includes('class') || query.includes('lab') || query.includes('r-103') || query.includes('03') || query.includes('04')) {
+                window.location.href = "class.html";
+            } 
+            else if (query.includes('canteen') || query.includes('food') || query.includes('service')) {
+                window.location.href = "canteen.html";
+            } 
+            else if (query.includes('campus') || query.includes('home') || query.includes('shah')) {
+                window.location.href = "campusfinder.html";
+            } 
+            else {
+                alert("No match found. Please search for Office, Class, or Canteen.");
+            }
+        });
+        
+        
+        document.getElementById('globalSearchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                document.getElementById('globalSearchBtn').click();
+            }
+        });
+        </script>
+
+</body>
+    </html>
+
